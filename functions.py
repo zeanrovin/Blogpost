@@ -8,37 +8,13 @@ df = pd.read_csv('./Searching_for_parking_NA.csv', index_col=False)
 USAPop = pd.read_csv('./USA population.csv')
 GDPandPop = pd.read_csv('./Top 30 Population GDP.csv')
 
-def getAvgPercentCar(city):
+def getAverageColumn(city, column):
+    #INPUT: Name of the city[to select specific rows] and Column name from Searching_for_parking_NA.csv
+    # Output: Average of the column[column] and selected rows[city] 
     city_df = df.loc[df['City'] == city]
-    average = city_df["PercentCar"].mean()
+    average = city_df[column].mean()
     return average
 
-
-
-def getAvgBigCar(city):
-    city_df = df.loc[df['City'] == city]
-    average = city_df["PercentMPV"].mean()
-    return average
-
-def getAvgLDTruck(city):
-    city_df = df.loc[df['City'] == city]
-    average = city_df["PercentLDT"].mean()
-    return average
-
-def getAvgMDTruck(city):
-    city_df = df.loc[df['City'] == city]
-    average = city_df["PercentMDT"].mean()
-    return average
-
-def getAvgHDTruck(city):
-    city_df = df.loc[df['City'] == city]
-    average = city_df["PercentHDT"].mean()
-    return average
-
-def getAvgOtherV(city):
-    city_df = df.loc[df['City'] == city]
-    average = city_df["PercentOther"].mean()
-    return average
 
 def getAvgTimetoPark(city):
     city_df = df.loc[df['City'] == city]
