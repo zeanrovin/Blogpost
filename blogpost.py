@@ -6,6 +6,11 @@ from IPython import display
 import seaborn as sn
 import functions as f
 
+"""
+This is a Udacity blogpost project
+
+"""
+
 #describe the df 
 print(f.df.head())
 print(f.df.shape)
@@ -106,9 +111,6 @@ TimeCarsMatrix = TimeandCars.corr()
 sn.heatmap(TimeCarsMatrix, annot=True)
 plt.title("Correlation matrix of  Average Time to park and types of car")
 plt.show()
-#for i in list_city:
- #   population = (f.GDPandPop.loc[f.GDPandPop['City'] == i]['Population']).to_string(index=False)
-  #  print('please work', population)
 
 print(pd.DataFrame(main_df))
 
@@ -164,4 +166,8 @@ corrMatrix = main_df.corr()
 #Fifth graph: Heatmap of main_df, showing correlation of each table
 sn.heatmap(corrMatrix, annot=True)
 plt.title("Correlation matrix of  Time to park")
+plt.show()
+
+#Additional graphs: 
+pd.plotting.scatter_matrix(main_df, diagonal='kde')
 plt.show()
